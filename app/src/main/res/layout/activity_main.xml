@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".task_managament.ui.MainActivity">
+
+   <androidx.cardview.widget.CardView
+       android:id="@+id/cardViewTitle"
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/titleCardHeight"
+       android:layout_marginStart="@dimen/defaultMargin"
+       android:layout_marginTop="@dimen/defaultMargin"
+       android:layout_marginEnd="@dimen/defaultMargin"
+       android:backgroundTint="@color/white"
+       app:layout_anchor="@+id/navHostFragment"
+       app:layout_anchorGravity="center|top"
+       app:hideOnScroll="true">
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+         <TextView
+             android:id="@+id/cardViewTitleTv"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="@dimen/defaultPadding"
+             android:layout_marginTop="@dimen/defaultPadding"
+             android:layout_marginEnd="@dimen/defaultPadding"
+             android:layout_marginBottom="@dimen/defaultPadding"
+             android:textAllCaps="true"
+             android:textColor="@android:color/darker_gray"
+             android:textSize="@dimen/titleFontSize"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintEnd_toStartOf="@+id/cardViewTitleIv"
+             app:layout_constraintHorizontal_chainStyle="packed"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="parent"
+             tools:text="@string/this_week_score" />
+
+         <ImageView
+             android:id="@+id/cardViewTitleIv"
+             android:layout_width="wrap_content"
+             android:layout_height="0dp"
+             android:layout_marginStart="@dimen/defaultPadding"
+             android:layout_marginTop="@dimen/defaultPadding"
+             android:layout_marginEnd="@dimen/defaultPadding"
+             android:layout_marginBottom="@dimen/defaultPadding"
+             android:adjustViewBounds="true"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toEndOf="@+id/cardViewTitleTv"
+             app:layout_constraintTop_toTopOf="parent"
+             app:srcCompat="@drawable/ic_easy_30_dp"
+             tools:src="@drawable/ic_easy_30_dp" />
+      </androidx.constraintlayout.widget.ConstraintLayout>
+   </androidx.cardview.widget.CardView>
+
+   <fragment
+       android:id="@+id/navHostFragment"
+       android:name="androidx.navigation.fragment.NavHostFragment"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       app:defaultNavHost="true"
+       app:navGraph="@navigation/main_navigation"
+       tools:viewBindingIgnore="true" />
+
+   <com.google.android.material.bottomappbar.BottomAppBar
+       android:id="@+id/bottomAppBar"
+       style="@style/Widget.MaterialComponents.BottomAppBar.PrimarySurface"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_gravity="bottom"
+       android:backgroundTint="@color/blue_700"
+       android:fitsSystemWindows="false"
+       app:fabAlignmentMode="center"
+       app:fabAnimationMode="scale"
+       app:fabCradleRoundedCornerRadius="5dp"
+       app:hideOnScroll="true"
+       app:titleMargin="0dp">
+
+      <com.google.android.material.bottomnavigation.BottomNavigationView
+          android:id="@+id/bottomNavigationView"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:background="@android:color/transparent"
+          android:outlineSpotShadowColor="@android:color/transparent"
+          app:elevation="0dp"
+          app:itemIconTint="@android:color/white"
+          app:itemTextColor="@android:color/white"
+          app:menu="@menu/main_menu" />
+   </com.google.android.material.bottomappbar.BottomAppBar>
+
+   <com.google.android.material.floatingactionbutton.FloatingActionButton
+       android:id="@+id/actionFab"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:backgroundTint="@color/blue_700"
+       android:contentDescription="@string/create_new_task"
+       android:src="@drawable/ic_baseline_note_add_24"
+       app:layout_anchor="@+id/bottomAppBar"
+       app:layout_anchorGravity="start|center"
+       app:tint="@android:color/white" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

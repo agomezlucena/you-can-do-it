@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="fadeOutDuration">300</integer>
+    <integer name="fromLeftOrRightDuration">500</integer>
+</resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/listTasksFragment"
+        android:icon="@drawable/ic_baseline_notes_24"
+        android:title="@string/task" />
+    <item
+        android:id="@+id/searchFragment"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="@string/search" />
+    <item
+        android:id="@+id/listStatistics"
+        android:icon="@drawable/ic_baseline_bar_chart_24"
+        android:title="@string/statistics" />
+    <item
+        android:id="@+id/configurationFragment"
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:title="@string/configuration" />
+</menu>

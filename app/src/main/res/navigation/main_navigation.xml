@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main_navigation"
+    app:startDestination="@id/listTasksFragment">
+
+    <fragment
+        android:id="@+id/listTasksFragment"
+        android:name="com.agomezlucena.youcandoit.task_managament.ui.check_task.ListTasksViewPagerFragment"
+        android:label="ListTasksFragment"
+        tools:layout="@layout/fragment_list_tasks_view_pager">
+        <action
+            android:id="@+id/action_listTasksFragment_to_createTaskFragment"
+            app:destination="@id/createTaskFragment"
+            app:enterAnim="@anim/fadein"
+            app:exitAnim="@anim/fadeout"
+            app:popEnterAnim="@anim/fadein"
+            app:popExitAnim="@anim/fadeout"
+            app:popUpTo="@id/listTasksFragment" />
+        <action
+            android:id="@+id/action_listTasksFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_listTasksFragment_to_detailTaskDialog"
+            app:destination="@id/detailTaskDialog" />
+        <action
+            android:id="@+id/action_listTasksFragment_to_thisWeekStatistics"
+            app:destination="@id/listStatistics" />
+        <action
+            android:id="@+id/action_listTasksFragment_to_configurationFragment"
+            app:destination="@id/configurationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createTaskFragment"
+        android:name="com.agomezlucena.youcandoit.task_managament.ui.create_task.CreateTaskFragment"
+        android:label="CreateTaskFragment"
+        tools:layout="@layout/fragment_create_task">
+        <action
+            android:id="@+id/action_createTaskFragment_to_listTasksFragment"
+            app:destination="@id/listTasksFragment"
+            app:enterAnim="@anim/fadein"
+            app:exitAnim="@anim/fadeout"
+            app:popUpTo="@id/listTasksFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.agomezlucena.youcandoit.task_managament.ui.search_tasks.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_seach">
+        <action
+            android:id="@+id/action_searchFragment_to_detailTaskDialog"
+            app:destination="@id/detailTaskDialog" />
+    </fragment>
+    <dialog
+        android:id="@+id/detailTaskDialog"
+        android:name="com.agomezlucena.youcandoit.task_managament.ui.check_task.DetailTaskDialog"
+        android:label="DetailTaskDialog"
+        tools:layout="@layout/dialog_task_detail">
+        <argument
+            android:name="task"
+            app:argType="com.agomezlucena.youcandoit.task_managament.Task" />
+    </dialog>
+    <fragment
+        android:id="@+id/listStatistics"
+        android:name="com.agomezlucena.youcandoit.task_managament.ui.statistics.ListStatistics"
+        android:label="ThisWeekStatistics"
+        tools:layout="@layout/fragment_list_tasks_view_pager"/>
+    <fragment
+        android:id="@+id/configurationFragment"
+        android:name="com.agomezlucena.youcandoit.task_managament.ui.configuration.ConfigurationFragment"
+        android:label="ConfigurationFragment"
+        tools:layout="@layout/fragment_configuration">
+        <action
+            android:id="@+id/action_configurationFragment_to_updateEmergencyContactFragment"
+            app:destination="@id/updateEmergencyContactFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateEmergencyContactFragment"
+        android:name="com.agomezlucena.youcandoit.task_managament.ui.configuration.UpdateEmergencyContactFragment"
+        android:label="UpdateEmergencyContactFragment" >
+        <action
+            android:id="@+id/action_updateEmergencyContactFragment_to_configurationFragment"
+            app:destination="@id/configurationFragment" />
+        <argument
+            android:name="contact"
+            app:argType="com.agomezlucena.youcandoit.contact_managament.Contact"
+            app:nullable="true" />
+    </fragment>
+</navigation>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/defaultMargin"
+        android:paddingVertical="@dimen/defaultMargin"
+        >
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/white"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:hint="@string/title_hint"
+                android:textColor="@android:color/secondary_text_light"
+                tools:text="hola"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/defaultMargin"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etExecutionDateTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:hint="@string/date_hint"
+                android:textColor="@android:color/secondary_text_light" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/textInputLayout3"
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
+            app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/difficulty_hint"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/secondary_text_light"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnEasyCreateTask"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/defaultMargin"
+                    android:layout_marginBottom="@dimen/defaultPadding"
+                    android:text="@string/easy_difficulty"
+                    app:cornerRadius="10dp"
+                    app:elevation="5dp"
+                    app:layout_constraintBottom_toTopOf="@+id/btnMediumCreateTask"
+                    app:layout_constraintEnd_toStartOf="@+id/tvScore"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/guideline"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnMediumCreateTask"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/normal_difficulty"
+                    app:cornerRadius="10dp"
+                    app:elevation="5dp"
+                    app:layout_constraintBottom_toTopOf="@+id/btnHardCreateTask"
+                    app:layout_constraintEnd_toEndOf="@+id/btnEasyCreateTask"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/btnEasyCreateTask"
+                    app:layout_constraintTop_toBottomOf="@+id/btnEasyCreateTask" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnHardCreateTask"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/hard_difficulty"
+                    app:cornerRadius="10dp"
+                    app:elevation="5dp"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline2"
+                    app:layout_constraintEnd_toEndOf="@+id/btnEasyCreateTask"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/btnMediumCreateTask"
+                    app:layout_constraintTop_toBottomOf="@+id/btnMediumCreateTask" />
+
+                <TextView
+                    android:id="@+id/tvScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="80dp"
+                    android:textColor="@android:color/secondary_text_light"
+                    android:textSize="50sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/btnEasyCreateTask"
+                    app:layout_constraintTop_toTopOf="@+id/imageView"
+                    tools:text="2" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_marginEnd="16dp"
+                    android:contentDescription="@string/score_iv_description"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/tvScore"
+                    app:layout_constraintTop_toTopOf="@+id/guideline"
+                    app:srcCompat="@drawable/ic_easy_30_dp"
+                    tools:viewBindingIgnore="true" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.21" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.9" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="@dimen/defaultMargin"
+            android:layout_marginBottom="8dp"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDescription"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="top"
+                android:backgroundTint="@color/white"
+                android:gravity="start|top"
+                android:hint="@string/description_hint"
+                android:textColor="@android:color/secondary_text_light"
+                tools:text="holi" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCreateTask"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/white"
+            android:text="@string/create_new_task"
+            android:textColor="@color/black"
+            app:cornerRadius="10dp"
+            app:elevation="5dp" />
+    </LinearLayout>
+</ScrollView>

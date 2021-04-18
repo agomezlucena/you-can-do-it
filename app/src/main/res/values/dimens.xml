@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="titleFontSize">15sp</dimen>
+    <dimen name="previewTaskTitleFontSize">20sp</dimen>
+    <dimen name="descriptionFontSize">12sp</dimen>
+    <dimen name="dateFontSize">12sp</dimen>
+    <dimen name="defaultMargin">16dp</dimen>
+    <dimen name="defaultPadding">8dp</dimen>
+    <dimen name="titleCardHeight">50dp</dimen>
+    <dimen name="marginToTitleCard">66dp</dimen>
+    <dimen name="taskPerDayTitleFontSize">40sp</dimen>
+    <dimen name="fadeOutDuration">500</dimen>
+</resources>
